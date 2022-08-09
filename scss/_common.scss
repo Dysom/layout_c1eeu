@@ -1,0 +1,82 @@
+//  Common Styles Start
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    line-height: 1;
+}
+
+body {
+    font-family: 'Font 2';
+    font-weight: 700;
+    @include func_font_size(18, px);
+    background-color: #354147;
+    color: #fff;
+}
+
+body > .wrapper + iframe {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+@mixin a_common {    
+    transition: opacity .3s ease;
+    
+    &:hover {
+        opacity: 0.7;
+    }    
+}
+
+.overhead-text {
+    font-weight: 800;
+    color: #FBD784;
+    text-transform: uppercase;
+    letter-spacing: 6px;   
+    line-height: 1.2em; 
+
+    @media (max-width: 1480px) {
+        letter-spacing: 3px;        
+    }
+
+    @media (max-width: 1400px) {
+        letter-spacing: 2px;        
+    }
+
+    @media (max-width: 1360px) {
+        letter-spacing: 1px;        
+    }
+}
+
+.overhead-text::before {
+    margin-right: 24px;
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 72px;
+    height: 2px;
+    background-color: #FBD784;
+
+    @media (max-width: 1400px) {
+        margin-right: 16px;        
+    }
+
+    @media (max-width: 1340px) {
+        margin-right: 12px;
+        width: 36px;
+    }
+
+    @media (max-width: 1024px) {
+        margin-right: 8px;
+        width: 24px;
+    }
+}
+
+//  Common Styles End

@@ -1,0 +1,4 @@
+/node_modules/
+/img (not compressed)/
+/package.json
+/package-lock.json

@@ -1,0 +1,19 @@
+// Font's Funcs Start
+
+@mixin func_font_size($fs,$fu) {
+    font-size: $fs+$fu;
+
+    @media (max-width: 560px) {
+        @if $fs == 88 {
+            font-size: 50+$fu;
+        }
+    }
+
+    @media (max-width: 440px) {
+        @if $fs == 88 {
+            font-size: 38+$fu;
+        }
+    }
+}
+
+// Font's Funcs End

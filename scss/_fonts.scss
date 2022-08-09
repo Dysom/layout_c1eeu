@@ -1,0 +1,49 @@
+// Font1 SemiBold
+@font-face {
+    font-family: 'Font 1';
+    font-style: normal;
+    font-weight: 600;
+    src: local(''),
+         url('../fonts/font1-semibold.woff2') format('woff2'), // Chrome 26+, Opera 23+, Firefox 39+ 
+         url('../fonts/font1-semibold.woff') format('woff'); // Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ 
+}
+
+// Font1 Bold
+@font-face {
+    font-family: 'Font 1';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+         url('../fonts/font1-bold.woff2') format('woff2'), // Chrome 26+, Opera 23+, Firefox 39+ 
+         url('../fonts/font1-bold.woff') format('woff'); // Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ 
+}
+
+// Font2 Medium
+@font-face {
+    font-family: 'Font 2';
+    font-style: normal;
+    font-weight: 500;
+    src: local(''),
+         url('../fonts/font2-medium.woff2') format('woff2'), // Chrome 26+, Opera 23+, Firefox 39+ 
+         url('../fonts/font2-medium.woff') format('woff'); // Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ 
+}
+
+// Font2 Bold
+@font-face {
+    font-family: 'Font 2';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+         url('../fonts/font2-bold.woff2') format('woff2'), // Chrome 26+, Opera 23+, Firefox 39+ 
+         url('../fonts/font2-bold.woff') format('woff'); // Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ 
+}
+
+// Font2 ExtraBold
+@font-face {
+    font-family: 'Font 2';
+    font-style: normal;
+    font-weight: 800;
+    src: local(''),
+         url('../fonts/font2-extrabold.woff2') format('woff2'), // Chrome 26+, Opera 23+, Firefox 39+ 
+         url('../fonts/font2-extrabold.woff') format('woff'); // Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ 
+}

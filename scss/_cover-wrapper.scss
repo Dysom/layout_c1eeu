@@ -1,0 +1,41 @@
+// Cover-Wrappers Start
+
+.cover-wrapper {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    position: fixed;
+    z-index: 1000;
+}
+
+.cover-wrapper.cover-wrapper_short {
+    bottom: unset;
+}
+
+.cover-wrapper.cover-wrapper_for-slider-n-side-nav {
+    @media (max-width: 600px) {
+        display: none;
+    }
+}
+
+.cover-sub-wrapper {
+    margin: 0 auto;    
+    padding: 0 80px;
+    pointer-events: none;
+    max-width: $max_content_width;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 1000px) {
+        padding: 0 40px;
+    }
+    
+    @media (max-width: 840px) {
+        padding: 0 15px;
+    }
+}
+
+// Cover-Wrappers End

@@ -1,0 +1,67 @@
+// Slider-n-SideNav Start
+
+.slider-n-side-nav-wrapper {
+    padding: 130px 0;
+    pointer-events: none;
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.slider {
+    width: 77px;
+    pointer-events: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    line-height: 1em;
+
+    /*@media (max-width: 400px) {
+        display: none;
+    }*/
+}
+
+.slider__link {
+    padding: 20px 0;
+    border-right: solid 3px rgba($color: #fff, $alpha: 0.5);    
+    transition: border-color 1s;
+    > span {
+        margin-left: 50%;
+        display: inline-block;
+        pointer-events: none;
+        transform: translateX(-50%);
+        transition: transform .5s, margin-left .5s;
+    }
+}
+
+.slider__link.active {
+    border-color: #fff;
+    cursor: default;
+    pointer-events: none;
+
+    > span {
+        margin-left: 0;        
+        transform: translateX(0);
+        transition-delay: .5s;
+    }
+}
+
+.side-nav {
+    display: flex;
+    pointer-events: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /*@media (max-width: 620px) {
+        display: none;
+    }*/
+}
+
+.side-nav__link {
+    margin: 15px 0;
+    writing-mode: vertical-lr;
+    @include a_common;
+}
+
+// Slider-n-SideNav End

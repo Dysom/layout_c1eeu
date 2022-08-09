@@ -1,0 +1,38 @@
+// Main-Wrapper Start
+
+.main-wrapper {
+    margin: 0 auto;
+    padding: 0 229px;    
+    max-width: $max_content_width;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: start;
+    background: url(/img/main_bg.jpg) no-repeat;
+    background-position: center 0;
+    // background-size: cover;
+    background-size: 100% auto;
+    background-color: #0B1D26;
+    box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.2);
+
+    @media (max-width: 1000px) {
+        padding: 0 100px;
+    }
+
+    @media (max-width: 840px) {
+        text-align: center;
+    }
+
+    @media (max-width: 440px) {
+        padding: 0 50px;
+    }
+
+    @media (max-width: 340px) {
+        padding: 0 20px;
+    }
+
+    
+}
+
+// Main-Wrapper End

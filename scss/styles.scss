@@ -1,0 +1,75 @@
+
+// min device screen width: 280px
+
+// $max_content_width: 1280px;
+$max_content_width: 1920px;
+
+@import "fonts";
+@import "funcs";
+@import "common";
+@import "main-wrapper";
+@import "cover-wrapper";
+@import "header";
+@import "footer";
+@import "main-block";
+@import "preview";
+@import "slider-n-side-nav";
+
+// Page Start
+
+.page {
+    margin-top: 191px;
+    flex: 1 0 auto;
+
+    @media (max-width: 420px) {
+        margin-top: 320px;
+    }
+}
+
+// Page End
+
+// Debug
+
+$debug_val: 0;
+
+@if $debug_val == 1 {
+    .page > *:not(.page__main-block), .footer {
+        display: none;
+    }
+} @else if $debug_val == 2 {
+    .page > *:not(.page__preview:nth-of-type(1)), .footer {
+        display: none;
+    }
+
+    .main-wrapper {
+        background-image: none;
+    }
+} @else if $debug_val == 3 {
+    .page > *:not(.page__preview:nth-of-type(2)), .footer {
+        display: none;
+    }
+
+    .main-wrapper {
+        background-image: none;
+    }
+}  @else if $debug_val == 4 {
+    .page > *:not(.page__preview:nth-of-type(3)), .footer {
+        display: none;
+    }
+
+    .main-wrapper {
+        background-image: none;
+    }
+} @else if $debug_val == 5 {
+    .page {
+        display: none;
+    }
+
+    .main-wrapper {
+        background-image: none;
+    }
+
+    .footer {
+        margin-top: 250px;
+    }
+}
