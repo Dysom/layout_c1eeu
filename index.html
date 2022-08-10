@@ -4,8 +4,75 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="/css/styles.min.css"/>
-    <script src="/script/script.js" defer></script>
+    <link rel="stylesheet" href="css/styles.min.css"/>
+    <script>
+        "use strict";
+
+        window.addEventListener("DOMContentLoaded", function () {
+
+            document.querySelector("#main-block-scroll-link").addEventListener("click", (e) => {
+                e.preventDefault();    
+                document.querySelector("#footer").scrollIntoView({behavior: "smooth"});
+            });
+
+            document.querySelectorAll("#slider > a").forEach((elem) => {
+                elem.addEventListener("click", (e) => {
+                    e.preventDefault();    
+                
+                    let linkStr = e.target.id.replace("slider-link-", "");
+
+                    if(linkStr == "start") {
+                        document.querySelector("#main-wrapper").scrollIntoView({behavior: "smooth"});
+                    }
+                    else {
+                        document.querySelector("#content_" + linkStr).scrollIntoView({behavior: "smooth"});
+                    }
+                });
+            });
+
+            {
+                const scrollingElemsAndItsSliderLinks = [
+                    {elemId: "#main-wrapper", linkId: "#slider-link-start"}
+                ];
+
+                for(let i = 1; i <= 3; i++) {
+                    scrollingElemsAndItsSliderLinks.push({elemId: "#content_" + i.toString().padStart(2, "0"), linkId: "#slider-link-" +  i.toString().padStart(2, "0")});
+                }
+
+                const topLimit = -100;
+                const bottomLimit = 100;
+
+                window.addEventListener('scroll', () => {
+                    let box, activePair = null;
+
+                    for(const pair of scrollingElemsAndItsSliderLinks) {
+                        if((box = document.querySelector(pair.elemId).getBoundingClientRect()).top >= topLimit && box.top <= bottomLimit) {
+                            activePair = pair;
+                
+                            break;
+                        }
+                    }
+
+                    for(const pair of scrollingElemsAndItsSliderLinks) {
+                        if(pair == activePair) {                
+                            document.querySelector(pair.linkId).classList.add("active");
+                        }
+                        else {
+                            document.querySelector(pair.linkId).classList.remove("active");
+                        }
+                    }
+
+                    if(document.body.getBoundingClientRect().top == 0) {
+                        document.querySelector("#header-wrapper").classList.remove("shifted");            
+                    }
+                    else {
+                        document.querySelector("#header-wrapper").classList.add("shifted");
+                    }
+                });
+            }
+
+        });
+    </script>
     <title>Document</title>
 </head>
 <body>
@@ -28,8 +95,8 @@
                 <div class="slider-n-side-nav-wrapper">                    
                     <nav class="side-nav">
                         <a href="#" class="side-nav__link">Follow us</a>
-                        <a href="#" class="side-nav__link" title="Instagram"><img src="/img/ico_instagram.svg" alt="instagram"/></a>
-                        <a href="#" class="side-nav__link" title="Twitter"><img src="/img/ico_twitter.svg" alt="twitter"/></a>
+                        <a href="#" class="side-nav__link" title="Instagram"><img src="img/ico_instagram.svg" alt="instagram"/></a>
+                        <a href="#" class="side-nav__link" title="Twitter"><img src="img/ico_twitter.svg" alt="twitter"/></a>
                     </nav>
                     <nav class="slider" id="slider">
                         <a href="#start" class="slider__link active" id="slider-link-start"><span>Start</span></a>
@@ -63,7 +130,7 @@
                     </p>
                     <a href="#" class="preview__link">read more</a>
                 </div>
-                <img src="/img/content_preview/01.jpg" alt="What level of  hiker are you?" class="preview__img"/>
+                <img src="img/content_preview/01.jpg" alt="What level of  hiker are you?" class="preview__img"/>
             </section>
             <section class="page__preview preview" id="content_02">
                 <div class="preview__content">
@@ -78,7 +145,7 @@
                     </p>
                     <a href="#" class="preview__link">read more</a>
                 </div>
-                <img src="/img/content_preview/02.jpg" alt="Picking the right Hiking Gear!" class="preview__img"/>
+                <img src="img/content_preview/02.jpg" alt="Picking the right Hiking Gear!" class="preview__img"/>
             </section>
             <section class="page__preview preview" id="content_03">
                 <div class="preview__content">
@@ -93,7 +160,7 @@
                     </p>
                     <a href="#" class="preview__link">read more</a>
                 </div>
-                <img src="/img/content_preview/03.jpg" alt="Understand Your Map & Timing" class="preview__img"/>
+                <img src="img/content_preview/03.jpg" alt="Understand Your Map & Timing" class="preview__img"/>
             </section>
         </main>
         <footer class="footer" id="footer">
